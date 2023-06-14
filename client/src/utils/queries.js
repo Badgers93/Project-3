@@ -15,13 +15,16 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_RECIPES = gql`
+  query Query {
+    recipes {
       _id
-      thoughtText
-      thoughtAuthor
       createdAt
+      directions
+      extras
+      ingredients
+      recipeName
+      contributor
     }
   }
 `;
@@ -44,17 +47,27 @@ export const QUERY_SINGLE_THOUGHT = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+query Query {
+  me {
+    _id
+    email
+    password
+    recipes {
+      directions
+      createdAt
+      contributor
       _id
-      username
-      email
-      thoughts {
+      extras
+      ingredients
+      recipeName
+      comments {
         _id
-        thoughtText
-        thoughtAuthor
+        commentAuthor
+        commentText
         createdAt
       }
     }
+    username
   }
+}
 `;

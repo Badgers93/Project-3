@@ -2,34 +2,38 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { ADD_RECIPE } from '../../utils/mutations';
+import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
+  
+  const [recipeName, setRecipeName] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [directions, setDirections] = useState('');
+  const [extras, setExtras] = useState('');
 
-  const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-    update(cache, { data: { addThought } }) {
+  const [addRecipe, { error }] = useMutation(ADD_RECIPE, {
+    update(cache, { data: { addRecipe } }) {
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { recipes } = cache.readQuery({ query: QUERY_RECIPES });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_RECIPES,
+          data: { recipes: [addRecipe, ...recipes] },
         });
       } catch (e) {
         console.error(e);
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      const { me } = cache.readQuery({ query: QUERY_ME }) || {me:{ recipes:[]}};
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+        data: { me: { ...me, recipes: [...me.recipes, addRecipe] } },
       });
     },
   });
@@ -38,14 +42,16 @@ const ThoughtForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({
+      const { data } = await addRecipe({
         variables: {
-          thoughtText,
-          thoughtAuthor: Auth.getProfile().data.username,
+          recipeName,
+          ingredients,
+          directions,
+          extras
         },
       });
 
-      setThoughtText('');
+      setDirections('');
     } catch (err) {
       console.error(err);
     }
@@ -54,34 +60,61 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
-      setThoughtText(value);
-      setCharacterCount(value.length);
+    if (name === 'directions' && value.length <= 500) {
+      setDirections(value);
+     
+    }
+    else if(name === "recipeName"){
+      setRecipeName(value);
+
+    }
+    else if(name === "ingredients"){
+      setIngredients(value);
+    }
+    else if(name === "extras"){
+      setExtras(value);
     }
   };
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Got any tasty recipes?</h3>
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
+                name="recipeName"
+                placeholder="Recipe Name"
+                value={recipeName}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+              <textarea
+                name="ingredients"
+                placeholder="Ingredients"
+                value={ingredients}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+              <textarea
+                name="directions"
+                placeholder="Directions"
+                value={directions}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+              <textarea
+                name="extras"
+                placeholder="Extras"
+                value={extras}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
@@ -90,7 +123,7 @@ const ThoughtForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Thought
+                Add Recipe
               </button>
             </div>
             {error && (
