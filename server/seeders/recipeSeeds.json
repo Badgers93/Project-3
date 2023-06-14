@@ -1,0 +1,44 @@
+[
+  {
+    "recipeName": "Cowboy Queso",
+    "contributor": "Badgers93",
+    "ingredients": "Queso",
+    "directions": "Melt it",
+    "extras": "Chips"
+  },
+  {
+    "recipeName": "Spaghetti with Meat Sauce",
+    "contributor": "Badgers93",
+    "ingredients": "1 box spaghetti of choice, 1 bottle red sauce of choice, 1 pound ground beef, parmesean cheese, salt, pepper, sugar",
+    "directions": "Bring water to boil in saucepan. Add pasta. Boil for 8-9 minutes or until pasta is tender. While pasta is boiling, cook ground beef over medium-high heat in pan. After cooked, add sauce, salt, pepper, and sugar into the pan. Heat, stir, serve.",
+    "extras": "Add parmasean cheese on top if wanted!"
+  },
+  {
+    "recipeName": "Elevated Ramen",
+    "contributor": "Badgers93",
+    "ingredients": "1 bag ramen, 2 eggs, carrots, corn, sriracha sauce, basil",
+    "directions": "Cook it",
+    "extras": "Basil"
+  },
+  {
+    "recipeName": "Lemon Chicken & Rice Pilaf",
+    "contributor": "Badgers93",
+    "ingredients": "Chicken breasts, 1 bag uncle ben bagged rice - rice pilaf flavor, lemons, poultry seasoning",
+    "directions": "Cook it",
+    "extras": "Lemon"
+  },
+  {
+    "recipeName": "Crazy Mac n Cheese",
+    "contributor": "Badgers93",
+    "ingredients": "1 box velveeta mac n cheese, milk, butter, 1 lb ground beef, salt & pepper",
+    "directions": "Cook mac n cheese according to box. Cook ground beef in pan with salt n pepper. Mix them up. Nice.",
+    "extras": "Add hot sauce, bread crumbs, ground up flaming hot cheetos for extra intense flavor"
+  },
+  {
+    "recipeName": "Zuchinni Pizza",
+    "contributor": "Badgers93",
+    "ingredients": "Zuchinni, pepperoni, cheese slices, pepper",
+    "directions": "Slice zuchinni, put peperonni and slices of cheese on top, place on baking sheet, bake in oven on 400 for like 18-20 minutes or something.",
+    "extras": "Pizza"
+  }
+]

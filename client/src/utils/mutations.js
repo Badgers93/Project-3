@@ -24,19 +24,24 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
+export const ADD_RECIPE = gql`
+  mutation AddRecipe($recipeName: String!, $ingredients: String!, $directions: String!, $extras: String!) {
+  addRecipe(recipeName: $recipeName, ingredients: $ingredients, directions: $directions, extras: $extras) {
+    contributor
+    createdAt
+    directions
+    extras
+    ingredients
+    recipeName
+    _id
+    comments {
       createdAt
-      comments {
-        _id
-        commentText
-      }
+      commentText
+      commentAuthor
+      _id
     }
   }
+}
 `;
 
 export const ADD_COMMENT = gql`
