@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ThoughtList = ({
+const RecipeList = ({
   recipes = [],
   showUsername = true
 }) => {
@@ -28,7 +28,7 @@ const ThoughtList = ({
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this recipe on {recipe.createdAt}
+                    You submitted this recipe on {recipe.createdAt}
                   </span>
                 </>
               )}
@@ -51,4 +51,4 @@ const ThoughtList = ({
   );
 };
 
-export default ThoughtList;
+export default RecipeList;

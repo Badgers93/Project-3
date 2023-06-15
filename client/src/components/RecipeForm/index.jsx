@@ -7,7 +7,7 @@ import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const ThoughtForm = () => {
+const RecipeForm = () => {
   const [thoughtText, setThoughtText] = useState('');
   
   const [recipeName, setRecipeName] = useState('');
@@ -135,7 +135,7 @@ const ThoughtForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share your recipes. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
@@ -143,4 +143,4 @@ const ThoughtForm = () => {
   );
 };
 
-export default ThoughtForm;
+export default RecipeForm;
