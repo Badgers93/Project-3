@@ -62,7 +62,8 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3
+      >Want to create your own recipes?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -74,23 +75,23 @@ const ThoughtForm = () => {
             Character Count: {characterCount}/280
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row justify-center justify-space-between-lg align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
               <textarea
                 name="thoughtText"
-                placeholder="Here's a new thought..."
+                placeholder="Share your delicious food ideas here"
                 value={thoughtText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2.0', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Thought
+              <button style={{backgroundColor:'black'}} className="btn btn-dark btn-block py-3" type="submit">
+                Post
               </button>
             </div>
             {error && (
