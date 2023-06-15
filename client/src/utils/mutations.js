@@ -45,11 +45,11 @@ export const ADD_RECIPE = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+  mutation addComment($recipeId: ID!, $commentText: String!) {
+    addComment(recipeId: $recipeId, commentText: $commentText) {
       _id
-      thoughtText
-      thoughtAuthor
+      recipeText
+      recipeAuthor
       createdAt
       comments {
         _id

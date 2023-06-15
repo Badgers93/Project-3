@@ -8,7 +8,7 @@ import { QUERY_RECIPES, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 
 const RecipeForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
+  const [recipeText, setRecipeText] = useState('');
   
   const [recipeName, setRecipeName] = useState('');
   const [ingredients, setIngredients] = useState('');
