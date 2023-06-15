@@ -29,13 +29,16 @@ export const QUERY_RECIPES = gql`
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_RECIPE = gql`
+  query getSingleRecipe($recipeId: ID!) {
+    recipe(recipeId: $recipeId) {
       _id
-      thoughtText
-      thoughtAuthor
       createdAt
+      directions
+      extras
+      ingredients
+      recipeName
+      contributor
       comments {
         _id
         commentText
