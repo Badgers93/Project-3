@@ -40,6 +40,7 @@ const RecipeList = ({
               <p>{recipe.extras}</p>
             </div>
             <Link
+            style={{backgroundColor: 'black'}}
               className="btn btn-primary btn-block btn-squared"
               to={`/recipes/${recipe._id}`}
             >
