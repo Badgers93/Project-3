@@ -1,15 +1,15 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const thoughtSchema = new Schema({
-  thoughtText: {
+const recipeSchema = new Schema({
+  recipeName: {
     type: String,
-    required: 'You need to leave a thought!',
+    required: 'Name your recipe!',
     minlength: 1,
-    maxlength: 280,
+    maxlength: 50,
     trim: true,
   },
-  thoughtAuthor: {
+  contributor: {
     type: String,
     required: true,
     trim: true,
@@ -38,8 +38,29 @@ const thoughtSchema = new Schema({
       },
     },
   ],
+  ingredients: {
+    type: String,
+    required: 'What are the ingredients!?!?!',
+    minlength: 1,
+    maxlength: 500,
+    trim: true,
+  },
+  directions: {
+    type: String,
+    required: 'Directions!?!?!',
+    minlength: 1,
+    maxlength: 500,
+    trim: true,
+  },
+  extras: {
+    type: String,
+    required: 'Any extras!?!?!',
+    minlength: 1,
+    maxlength: 500,
+    trim: true,
+  }
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Recipe = model('Recipe', recipeSchema);
 
-module.exports = Thought;
+module.exports = Recipe;

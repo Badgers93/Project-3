@@ -1,14 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import RecipeList from '../components/RecipeList';
+import RecipeForm from '../components/RecipeForm';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_RECIPES } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_RECIPES);
+  const recipes = data?.recipes || [];
 
   return (
     <main>
@@ -17,15 +17,15 @@ const Home = () => {
           className="col-10 col-md-10 mb-3 p-3"
           style={{ border: '1px solid #00000' }}
         >
-          <ThoughtForm />
+          <RecipeForm />
         </div>
         <div className="col-12 col-md-12 mb-5">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title=""
+            <RecipeList
+              recipes={recipes}
+              title="Some Feed for Recipes(s)..."
             />
           )}
         </div>
