@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <main>
-      <div style={{backgroundColor: 'orange'}} className="flex-row justify-left">
+      <div style={{backgroundColor: 'orange'}} className="flex-row">
         <div
           className="col-5 col-md-12 mb-4 p-3"
           style={{ border: '1px solid #00000' }}

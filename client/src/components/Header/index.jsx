@@ -14,8 +14,8 @@ const Header = () => {
       style={{backgroundColor: 'black', width:'100%'}}
        className="flex-row justify-space-between-lg justify-center align-center p-4">
         <div>
-          <Link className="text-light" to="/">
-            <h1 style={{color:'white'} } className="m-5">The Recipe Forum</h1>
+          <Link className="r" to="/">
+            <h1 style={{color:'white', alignItems:'center'} } className="m-5 p-5">The Recipe Forum</h1>
           </Link>
         </div>
         <div>
@@ -24,7 +24,7 @@ const Header = () => {
               <Link style={{backgroundColor: 'black'}} className="btn btn-md btn-info m-2" to="/me">
                 {Auth.getProfile().data.username}
               </Link>
-              <button style={{backgroundColor: 'black'}} className="btn btn-md btn-info m-2" onClick={logout}>
+              <button style={{backgroundColor: 'gray'}} className="btn btn-md btn-info m-2" onClick={logout}>
                 Logout
               </button>
             </>
