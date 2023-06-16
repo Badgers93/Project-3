@@ -6,9 +6,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      recipes {
         _id
-        thoughtText
+        recipeText
         createdAt
       }
     }
