@@ -13,7 +13,7 @@ const RecipeList = ({
     <div>
       {recipes &&
         recipes.map((recipe) => (
-          <div key={recipe._id} className="card mb-3">
+          <div key={recipe._id} className="card m-5">
             <h4 
             style={{backgroundColor: 'black', color: 'white'}}
             className="card-header p-3 m-0">
@@ -37,7 +37,7 @@ const RecipeList = ({
             </h4>
             <div 
             style={{backgroundColor:'lightgray'}}
-            className="card-body p-2">
+            className="card-body p-5">
               <p>{recipe.recipeName}</p>
               <p>{recipe.ingredients}</p>
               <p>{recipe.directions}</p>

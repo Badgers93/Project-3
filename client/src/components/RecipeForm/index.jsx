@@ -91,7 +91,7 @@ const RecipeForm = () => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-md-9 my-3 p-3">
+            <div className="col-6 col-md-12 p-5 m-6 align-center">
               <textarea
                 name="recipeName"
                 placeholder="Recipe Name"
@@ -126,9 +126,9 @@ const RecipeForm = () => {
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
+            <div className="col-6 col-md-12 my-1 p-1 ">
               <button 
-              style={{backgroundColor: 'orange', color: 'white'}}
+              style={{backgroundColor: 'gray',color: 'black'}}
               className="btn btn-block py-3" type="submit">
                 Add Recipe
               </button>

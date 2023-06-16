@@ -40,12 +40,16 @@ const CommentForm = ({ recipeId }) => {
   };
 
   return (
-    <div>
-      <h4>What do you think about this recipe?</h4>
+    <div
+    style={{backgroundColor:'white', color: 'black'}}
+    >
+      <h4
+      >What do you think about this recipe?</h4>
 
       {Auth.loggedIn() ? (
         <>
           <p
+          style={{backgroundColor:'white'}}
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
@@ -54,22 +58,24 @@ const CommentForm = ({ recipeId }) => {
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row justify-center justify-space-between-md align-center m-3 p-3"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12 col-md-6">
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."
                 value={commentText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="col-6 col-md-6">
+              <button 
+              style={{backgroundColor: 'black', color: 'white'}} 
+              className="btn btn-block py-3" type="submit">
                 Add Comment
               </button>
             </div>
@@ -78,7 +84,7 @@ const CommentForm = ({ recipeId }) => {
       ) : (
         <p>
           You need to be logged in to share your recipes. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">login</Link> or <Link to="/signup">Sign Up.</Link>
         </p>
       )}
     </div>
