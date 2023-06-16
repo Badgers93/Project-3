@@ -30,11 +30,11 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link style={{backgroundColor: 'black'}} className="btn btn-md btn-info btn-info m-2" to="/login">
+              <Link style={{backgroundColor: 'black'}} className="btn btn-md btn-info btn-info m-0" to="/login">
                 Login
               </Link>
-              <Link style={{backgroundColor: 'black'}} className="btn btn-md btn-info m-2" to="/signup">
-                Sign up
+              <Link style={{backgroundColor: 'gray'}} className="btn btn-md btn-info m-0" to="/signup">
+                JOIN
               </Link>
             </>
           )}

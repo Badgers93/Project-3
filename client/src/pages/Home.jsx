@@ -14,12 +14,12 @@ const Home = () => {
     <main>
       <div style={{backgroundColor: 'orange'}} className="flex-row justify-left">
         <div
-          className="col-10 col-md-10 mb-3 p-3"
+          className="col-5 col-md-12 mb-4 p-3"
           style={{ border: '1px solid #00000' }}
         >
           <RecipeForm />
         </div>
-        <div className="col-12 col-md-12 mb-5">
+        <div className="col-5 col-lg-12 mb-4 p-3">
           {loading ? (
             <div>Loading...</div>
           ) : (

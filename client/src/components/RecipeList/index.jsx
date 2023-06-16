@@ -6,7 +6,7 @@ const RecipeList = ({
   showUsername = true
 }) => {
   if (!recipes.length) {
-    return <h3>No Recipes Yet</h3>;
+    return <h3 >No Recipes Yet</h3>;
   }
 
   return (
@@ -14,34 +14,38 @@ const RecipeList = ({
       {recipes &&
         recipes.map((recipe) => (
           <div key={recipe._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 
+            style={{backgroundColor: 'black', color: 'white'}}
+            className="card-header p-3 m-0">
               {showUsername ? (
                 <Link
-                  className="text-light"
+                  style={{color: 'white'}}
                   to={`/profiles/${recipe.contributor}`}
                 >
                   {recipe.contributor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this recipe on {recipe.createdAt}
+                  Posted: {recipe.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You submitted this recipe on {recipe.createdAt}
+                  posted: {recipe.createdAt}
                   </span>
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-2">
+            <div 
+            style={{backgroundColor:'lightgray'}}
+            className="card-body p-2">
               <p>{recipe.recipeName}</p>
               <p>{recipe.ingredients}</p>
               <p>{recipe.directions}</p>
               <p>{recipe.extras}</p>
             </div>
             <Link
-            style={{backgroundColor: 'black'}}
-              className="btn btn-primary btn-block btn-squared"
+            style={{backgroundColor: 'black', color: 'white'}}
+              className="btn btn-block btn-squared"
               to={`/recipes/${recipe._id}`}
             >
               Join the discussion on this recipe.

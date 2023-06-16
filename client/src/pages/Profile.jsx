@@ -37,11 +37,10 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="flex-row justify-center mb-3">
-        <h2 
-        style={{backgroundColor:'orange', color: 'white'}}
-        className="col-12 col-md-12 p-5 mb-5">
-        {userParam ? `${user.username}'s` : 'your'} profile
+      <div className="flex-row justify-center mb-3 w-10">
+        <h2
+        className="col-12 col-md-12 p-3 mb-3">
+        {userParam ? `${user.username}'s` : 'Profile'}
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
@@ -54,8 +53,8 @@ const Profile = () => {
         </div>
         {!userParam && (
           <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted   #1a1a1a' }}
+            className="col-12 col-md-12 mb-4 p-4"
+            style={{ border: '1px dotted   #1a1a1a', backgroundColor: 'black' }}
           >
             <RecipeForm />
           </div>

@@ -78,21 +78,26 @@ const RecipeForm = () => {
 
   return (
     <div>
-      <h3>Got any tasty recipes?</h3>
+      <h3
+      className='p-3 my-3'
+      style={{backgroundColor:'orange', color: 'white'}}
+      >Got any tasty recipes?
+      </h3>
 
       {Auth.loggedIn() ? (
         <>
           <form
+           style={{backgroundColor:'black', color: 'white'}}
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12 col-md-9 my-3 p-3">
               <textarea
                 name="recipeName"
                 placeholder="Recipe Name"
                 value={recipeName}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
               <textarea
@@ -100,7 +105,7 @@ const RecipeForm = () => {
                 placeholder="Ingredients"
                 value={ingredients}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
               <textarea
@@ -108,7 +113,7 @@ const RecipeForm = () => {
                 placeholder="Directions"
                 value={directions}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
               <textarea
@@ -116,18 +121,20 @@ const RecipeForm = () => {
                 placeholder="Extras"
                 value={extras}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button 
+              style={{backgroundColor: 'orange', color: 'white'}}
+              className="btn btn-block py-3" type="submit">
                 Add Recipe
               </button>
             </div>
             {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+              <div className="col-12 my-12 bg-danger text-white p-3">
                 {error.message}
               </div>
             )}
@@ -136,7 +143,7 @@ const RecipeForm = () => {
       ) : (
         <p>
           You need to be logged in to share your recipes. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">login</Link> or <Link to="/signup">Sign Up.</Link>
         </p>
       )}
     </div>
