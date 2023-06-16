@@ -41,8 +41,8 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-3">
-      <div className="col-12 col-lg-10">
+    <main className="flex-row justify-center mb-3 m-5">
+      <div className="col-12 col-lg-6">
         <div className="card">
           <h4 
           style={{backgroundColor: 'black', color: 'white'}} 
@@ -73,8 +73,8 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary p-3"
-                  style={{ cursor: 'pointer', backgroundColor: 'black', color: 'white' }}
+                  className="btn btn-block btn-primary p-3 m-0 w-1"
+                  style={{ cursor: 'pointer', backgroundColor: 'orange', color: 'white' }}
                   type="submit"
                 >
                   Login
