@@ -36,15 +36,13 @@ const SingleRecipe = () => {
       className="py-4">
         <blockquote
           className="p-4"
-          style={{
-style
+          
+      style={{
             backgroundColor: 'lightgray',
             fontSize: '2rem',
-            fontStyle: 'normal'
-           
- main
+            fontStyle: 'normal',
             lineHeight: '1.5',
-          }}
+      }}
         >
           {recipe.recipeName}
         </blockquote>
