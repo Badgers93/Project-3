@@ -110,13 +110,15 @@ const resolvers = {
                 _id: commentId,
                 commentAuthor: context.user.username,
               },
-            },
+           },
           },
           { new: true }
         );
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+  
+    
   },
 };
 

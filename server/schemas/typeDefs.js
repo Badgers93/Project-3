@@ -25,6 +25,7 @@ const typeDefs = gql`
     commentText: String
     commentAuthor: String
     createdAt: String
+    recipeId: [Recipe]
   }
 
   type Auth {

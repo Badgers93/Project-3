@@ -55,7 +55,27 @@ export const ADD_COMMENT = gql`
         _id
         commentText
         createdAt
+        
       }
     }
   }
 `;
+
+export const REMOVE_COMMENT = gql`
+
+mutation removeComment($recipeId: ID!, $commentId: ID!) {
+removeComment(recipeId: $recipeId, commentText: $commentText){
+_id
+      recipeName
+      contributor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
+
