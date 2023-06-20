@@ -2,18 +2,20 @@ import React from 'react';
 
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
-    return <h4>No Comments Yet</h4>;
+    return <h4
+    className="card-header bg-black text-white p-2 m-0"
+    >No Comments Yet</h4>;
   }
 
   return (
     <>
       <h3
-        className="p-5 display-inline-block"
+        className="p-3 display-inline-block"
         style={{ borderBottom: '1px dotted #1a1a1a'}}
       >
         Comments
       </h3>
-      <div className="flex-row my-4">
+      <div className="flex-row my-4 ">
         {comments &&
           comments.map((comment) => (
             <div key={comment._id} className="col-12 mb-3 pb-3">
