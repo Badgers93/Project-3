@@ -109,6 +109,9 @@ https://github.com/Badgers93/Project-3
 Team Members Portfolios
 
 Brian Badger: https://github.com/Badgers93
+
 Ashlyn Smith: https://github.com/ashlynsmith
+
 Mohammad Al-Abedredha: https://github.com/malabedredha
+
 Axel Estrada: https://github.com/AxelEstrada1
