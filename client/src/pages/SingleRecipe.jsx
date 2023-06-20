@@ -51,7 +51,6 @@ const SingleRecipe = () => {
       <div className="my-5">
         <CommentList comments={recipe.comments} />
       </div>
- style
 
       <div className="m-3 p-4" style={{ border: '1px solid #1a1a1a', color: 'white' }}>
      
